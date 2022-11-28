@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <p>
+      {{ header_text }}
+    </p>
+
+    <div class="row">
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Matchup </th>
+                <th scope="col">Result</th>
+                <th scope="col">Winner</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                <!-- format if from other table object.fkfield.datafromreferencetable -->
+                <!-- note how to use the if statement below. the value of isActive is either True or False but we want to display "Active" or "Inactive" -->
+                {% for object in object_list %}
+              <tr>
+                <th scope="row">{{ object.team1.name }} vs {{ object.team2.name }}</th>
+                <td>{{ object.score_t1 }}, {{ object.score_t2 }}</td>
+                <td>{{ object.winner.name }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+  </div>
+
+{% endblock content %}

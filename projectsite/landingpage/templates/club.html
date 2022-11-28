@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <p>
+      {{ header_text }}
+    </p>
+
+    <div class="row">
+        <ul class="list-unstyled">
+            {% for object in object_list %}
+            <li class="media">
+              <img class="mr-3" src="../media/img/{{object.team_pic}}" height="100px" alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">{{object.name}}</h5>
+                {{object.description}}
+              </div>
+            </li>
+            <br>
+            {% endfor %}
+          </ul>
+    </div>
+  </div>
+
+{% endblock content %}
