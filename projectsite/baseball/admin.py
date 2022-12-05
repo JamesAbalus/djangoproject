@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.contrib.admin import display
 from .models import Position, Person, Club, Play, Match
 
-
 # Register your models here.
 
 @admin.register(Position)
@@ -12,8 +11,8 @@ class PositionAdmin(admin.ModelAdmin):
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ("lastname","firstname","height","weight")
-    search_fields = ("lastname",)
+    list_display = ("lastname", "firstname", "height", "weight")
+    search_fields = ("lastname", "firstname", "height", "weight")
 
 @admin.register(Club)
 class ClubAdmin(admin.ModelAdmin):

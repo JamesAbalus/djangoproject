@@ -37,7 +37,7 @@ class PlayerView(ListView):
     model = Play
     context_object_name = 'play'
     template_name = "player.html"
-    paginate_by = 10
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -62,4 +62,3 @@ class MatchView(ListView):
     def get_queryset(self, *args, **kwargs):
         qs = super(MatchView, self).get_queryset(*args, **kwargs)
         return qs
-

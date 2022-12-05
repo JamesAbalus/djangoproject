@@ -11,16 +11,18 @@
         <ul class="list-unstyled">
             {% for object in object_list %}
             <li class="media">
-              <center><img class="mr-3" src="../media/img/{{object.team_pic}}" height="200px" alt="Generic placeholder image" ></center>
+              <center><img class="mr-3" src="../media/img/{{object.team_pic}}" height="200px" alt="Generic placeholder image"></center>
               <div class="media-body">
+                <br>
                 <h5 class="mt-0 mb-1">{{object.name}}</h5>
+                <br>
                 {{object.description}}
               </div>
             </li>
             <br>
             {% endfor %}
           </ul>
-          {% include 'includes/pagination.html' %}
+          {% include 'includes/pagination.html' %}  
     </div>
   </div>
 

@@ -1,9 +1,12 @@
 from django.db import models
 from django.utils import timezone
 
-class BaseModel(models.Model):
+# Create your models here.
+
+class BaseModel (models.Model):
     created_at = models.DateTimeField(
-        auto_now_add=True, db_index=True)
+        auto_now_add=True, db_index=True
+    )
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -19,7 +22,6 @@ class Position(BaseModel):
 class Person(BaseModel):
     lastname = models.CharField(max_length=100)
     firstname = models.CharField(max_length=100)
-    email = models.EmailField(null=True, blank=True, max_length=100)
     height = models.DecimalField(max_digits=10, decimal_places=5, null=True)
     weight = models.DecimalField(max_digits=10, decimal_places=5, null=True)
 
@@ -37,7 +39,6 @@ class Club(BaseModel):
 
     def __str__(self):
         return f"{self.name}"
-
 
 class Play(BaseModel):
     STRING_CHOICES= (
@@ -59,4 +60,5 @@ class Match(BaseModel):
 
     def __str__(self):
         return f"{self.team1} vs {self.team2}"
+
 
